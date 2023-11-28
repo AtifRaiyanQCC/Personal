@@ -11,7 +11,7 @@ struct List {
     Node *tail;
     List();
     ~List();
-    int size;
+    int size;   //int object size
     int getSize();
     void clear();
     Iterator begin();

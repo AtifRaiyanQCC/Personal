@@ -5,7 +5,7 @@
 #include "Profession.h"
 
 struct Node {
-    Profession data ;                                              
+    Profession data ;   //makes a object of type Profession                                           
     Node *next;
     Node *prev;
     Node();

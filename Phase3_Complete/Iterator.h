@@ -5,7 +5,7 @@
 #include "Node.h"
 
 struct Iterator {
-    Node *current;
+    Node *current;                      //makes object current of type Node
     Iterator(Node *n);
     void next();
     void prev();

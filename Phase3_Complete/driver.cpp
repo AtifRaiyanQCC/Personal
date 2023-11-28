@@ -7,31 +7,31 @@
 #include "Algorithms.h"
 
 void read(std::string file, List &list){
-    std::ifstream Files;
-    std::string cline, token;
-    Files.open(file);
-    while( getline(Files, cline) ){
-        std::istringstream parser(cline);
-        int Position = 0;
-        std::string name;
-        int number;
+    std::ifstream Files;                            // creates file input object                               
+    std::string cline, token;                       // creates  2 varibles to store data
+    Files.open(file);                               // opens file called from main using parameter file
+    while( getline(Files, cline) ){                 // while loop to parse every line in csv file
+        std::istringstream parser(cline);           // connects stringstream object to line
+        int Position = 0;                           // makes varaible Position
+        std::string name;                           // varible to store data of name
+        int number;                                 // varible to store data of number
 
-        while( getline(parser, token, ',') ){
-            if(Position == 0) {
+        while( getline(parser, token, ',') ){       // while loop to seperate the line into tokens using ","
+            if(Position == 0) {                     // If statement to cycle every row of the csv file
                 name = token;
                 ++Position;
             }
-            else {
+            else {                                  // coverter to convert string into integer
                 std::istringstream converter(token);    
                 converter >> number;                
-                Position = 0;
+                Position = 0;                       // sets Position to 0 to reset the cycle
 
             }
         }
-        push_back(list, Profession(name, number));
+        push_back(list, Profession(name, number));      // stores each read csv line to the end of a list 
         std::cout << name << " " << number << "\n";
     }
-    Files.close();
+    Files.close();                                      // closes the file
 }
 
 int main() {
@@ -93,10 +93,10 @@ int main() {
     std::cout << list.getSize() <<std::endl;
 
     std::cout << "\nALGORITHMS\n";
-    list.clear();
-    Algorithms alg;
-    List lists1, lists2;
-    Profession d1("N/A", 100);
+    list.clear();                               // set list to no values
+    Algorithms alg;                             // object alg of type Algorithms
+    List lists1, lists2;                        // object lists1 and lists2 of type List
+    Profession d1("N/A", 100);                  // set data points to specific objects of type Profession          
     Profession d2("N/A", 300);
     Profession d3("N/A", 500);
     Profession d4("N/A", 700);
@@ -105,7 +105,7 @@ int main() {
     Profession d7("N/A", 650);
     Profession d8("N/A", 750);
 
-    push_back(lists1, d1);
+    push_back(lists1, d1);                      //calls objects and pushes them to the end of a list
     push_back(lists1, d2);
     push_back(lists1, d3);
     push_back(lists1, d4);
@@ -114,21 +114,21 @@ int main() {
     push_back(lists2, d7);
     push_back(lists2, d8);
 
-    print(lists1);
-    print(lists2);
-    alg.merge(lists1, lists2, list, true);
-    print(list);
+    print(lists1);                              // prints lists1
+    print(lists2);                              // prints lists2
+    alg.merge(lists1, lists2, list, true);      // calls member function merge with parameters lists1, lists2, list and true ie true means we want lower values
+    print(list);                                
     std::cout << "\nmergeSort\n";
-    alg.mergeSort(list, true);
+    alg.mergeSort(list, true);                  // calls member function mergesort with parameters list, true
     print(list);
     std::cout << "\nreverse\n";
-    alg.reverse(list);
+    alg.reverse(list);                          // calls member function reverse with parameters list
     print(list);
-    list.clear();
+    list.clear();                               // clears list
     
 
     std::cout << "\nCsv\n";
-    read("data.csv", list);
+    read("data.csv", list);                     // read function being called with name of csv file
     std::cout << std::endl;
     print(list);
     
