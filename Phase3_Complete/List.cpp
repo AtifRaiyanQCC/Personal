@@ -82,7 +82,7 @@ void pop_back(List &list) {                                 // removes last data
     list.size--;                          
     delete temp;                                            
 }
-Iterator insert(List &list, Iterator itr, const Profession &d)     // adds data point to the address before the current address ie insert(list, itr, Profession("N/A", 100));
+Iterator insert(List &list, Iterator itr, const Profession &d)     // adds data point before the current address ie insert(list, itr, Profession("N/A", 100));
 {                                                                  // 500 -> 100, 500
     if(itr.current == nullptr) { return itr; }             
     if(list.head == nullptr || itr.current == list.head) {          
@@ -97,7 +97,7 @@ Iterator insert(List &list, Iterator itr, const Profession &d)     // adds data 
     list.size++;
     return Iterator(temp);
 }
-Iterator erase(List &list, Iterator itr)                           // removes data point to the address before the current address ie erase(list, itr);
+Iterator erase(List &list, Iterator itr)                           // removes data point before the current address ie erase(list, itr);
 {                                                                  // 100, 500 -> 500
     if(itr.current == nullptr) { return itr; }              
     if(list.head == nullptr || itr.current == list.head ) { return itr; } 
