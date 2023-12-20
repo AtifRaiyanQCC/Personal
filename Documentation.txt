@@ -1,0 +1,17 @@
+ET580 Project Documentation
+
+Instructions:
+A. Write the group number and full names of all active group members.
+B. Write the name of each file and who contributed.
+C. State ALL known problems or incomplete features of the project.
+D. In each .cpp file write a single line comment next to each function stating who contributed.
+-------------------------------------------------------------------------------------------
+
+A. Group Members:
+Atif Raiyan, Tirtho Roy
+
+
+B. Files : Contributors
+Entire Project Done by Atif Raiyan
+
+C. Known Problems or Incomplete Code
