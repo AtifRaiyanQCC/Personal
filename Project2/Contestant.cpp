@@ -63,7 +63,7 @@ void Contestant::increaseMax() {        //increases max
 bool Contestant::operator==(const Contestant& other) const {                    //equality operator
     return (name == other.name && id == other.id && maxRaces == other.maxRaces);
 }
-std::ostream& operator<<(std::ostream& out, const Contestant& contestant) {     steam insertion operator
+std::ostream& operator<<(std::ostream& out, const Contestant& contestant) {     //steam insertion operator
     out << "Name: " << contestant.name << ", ID: " << contestant.id << ", Max Races: " << contestant.maxRaces;
     return out;
 }

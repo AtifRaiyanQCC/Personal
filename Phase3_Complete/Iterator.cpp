@@ -3,7 +3,7 @@
 Iterator::Iterator(Node *n): current(n) {       
 }
 void Iterator::next() {            //goes to the next data point        
-    current = current->next;
+    current = current->next;        
 }
 void Iterator::prev() {            // goes to the previous data point
     current = current->prev;
