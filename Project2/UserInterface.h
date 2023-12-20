@@ -9,7 +9,7 @@
 
 class UserInterface {
 public:
-    virtual void menu(std::vector<Contestant*>& contestants, std::vector<Race*>& races) = 0;
+    virtual void menu(std::vector<Contestant*>& contestants, std::vector<Race*>& races) = 0;        
 
     template<typename T>
     static void display(const std::vector<T*>& container) {

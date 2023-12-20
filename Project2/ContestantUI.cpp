@@ -1,10 +1,10 @@
 #include "ContestantUI.h"
 
 void ContestantUI::menu(std::vector<Contestant*>& contestants, std::vector<Race*>& races) {
-    std::vector<Contestant*>::iterator sc = contestants.end();
+    std::vector<Contestant*>::iterator sc = contestants.end();              //declares vector with defauly value as contestants.end()
     char pl;
     do {
-        std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        std::cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";             //ui for menu
         std::cout << "Contestant Menu:" << std::endl;
         std::cout << "A - Display all Races" << std::endl;
         std::cout << "B - Contestant Selection" << std::endl;
@@ -21,7 +21,7 @@ void ContestantUI::menu(std::vector<Contestant*>& contestants, std::vector<Race*
                 UserInterface::display(races);
                 break;
             case 'B':
-                sc = UserInterface::selectContestant(contestants);
+                sc = UserInterface::selectContestant(contestants);      //sets iterator to selected contestant
                 break;
             case 'C':
                 if(sc != contestants.end()) {
@@ -46,7 +46,7 @@ void ContestantUI::menu(std::vector<Contestant*>& contestants, std::vector<Race*
     }while(pl != 'F');
 }
 
-void ContestantUI::addRace(std::vector<Contestant*>::iterator contestantsIt, std::vector<Race*>::iterator racesIt, std::vector<Race*>& races) {
+void ContestantUI::addRace(std::vector<Contestant*>::iterator contestantsIt, std::vector<Race*>::iterator racesIt, std::vector<Race*>& races) {     //adds a race
     auto raceIt = UserInterface::selectRace(races);
     if(raceIt != races.end()) {
         (*contestantsIt)->addRace(*raceIt);
@@ -54,7 +54,7 @@ void ContestantUI::addRace(std::vector<Contestant*>::iterator contestantsIt, std
     }
 }
 
-void ContestantUI::removeRace(std::vector<Contestant*>::iterator contestantsIt, std::vector<Race*>::iterator racesIt) {
+void ContestantUI::removeRace(std::vector<Contestant*>::iterator contestantsIt, std::vector<Race*>::iterator racesIt) {             //removes a race
     (*contestantsIt)->removeRace(*racesIt);
     std::cout << "Race removed successfully.\n";
 }

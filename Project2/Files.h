@@ -35,7 +35,7 @@ void readContestant(std::vector<Contestant*>& contestants) {
 
             }
         }   
-        contestants.push_back(new Contestant(name, id, maxRaces));
+        contestants.push_back(new Contestant(name, id, maxRaces));  //pushes back data
     }
     file.close();
 };
